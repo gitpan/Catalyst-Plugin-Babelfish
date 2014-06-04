@@ -1,0 +1,55 @@
+---
+abstract: 'Locale::Babelfish for Catalyst'
+author:
+  - 'Igor Mironov <grif@cpan.org>'
+build_requires:
+  Catalyst::Test: 0
+  File::Spec: 0
+  File::Temp: 0
+  FindBin: 0
+  IO::Handle: 0
+  IPC::Open3: 0
+  Test::Deep: 0
+  Test::More: 0.98
+  strict: 0
+  utf8: 0
+  warnings: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.132140'
+license: mit
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Catalyst-Plugin-Babelfish
+no_index:
+  directory:
+    - t
+    - xt
+    - eg
+    - examples
+    - corpus
+  namespace:
+    - t::lib
+  package:
+    - DB
+provides:
+  Catalyst::Plugin::Babelfish:
+    file: lib/Catalyst/Plugin/Babelfish.pm
+    version: 0.01
+requires:
+  Carp: 0
+  Catalyst::Runtime: 0
+  Locale::Babelfish: 0
+  Modern::Perl: 0
+  parent: 0
+  perl: 5.008009
+  strict: 0
+  utf8: 0
+  warnings: 0
+resources:
+  bugtracker: https://github.com/regru/Catalyst-Plugin-Babelfish/issues
+  homepage: https://metacpan.org/release/Catalyst-Plugin-Babelfish
+  repository: git://github.com/regru/Catalyst-Plugin-Babelfish.git
+version: 0.01
