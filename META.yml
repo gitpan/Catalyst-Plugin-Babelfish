@@ -37,11 +37,11 @@ no_index:
 provides:
   Catalyst::Plugin::Babelfish:
     file: lib/Catalyst/Plugin/Babelfish.pm
-    version: 0.01
+    version: 0.02
 requires:
   Carp: 0
   Catalyst::Runtime: 0
-  Locale::Babelfish: 0
+  Locale::Babelfish: 0.06
   Modern::Perl: 0
   parent: 0
   perl: 5.008009
@@ -52,4 +52,4 @@ resources:
   bugtracker: https://github.com/regru/Catalyst-Plugin-Babelfish/issues
   homepage: https://metacpan.org/release/Catalyst-Plugin-Babelfish
   repository: git://github.com/regru/Catalyst-Plugin-Babelfish.git
-version: 0.01
+version: 0.02

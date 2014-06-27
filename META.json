@@ -48,7 +48,7 @@
          "requires" : {
             "Carp" : "0",
             "Catalyst::Runtime" : "0",
-            "Locale::Babelfish" : "0",
+            "Locale::Babelfish" : "0.06",
             "Modern::Perl" : "0",
             "parent" : "0",
             "perl" : "5.008009",
@@ -80,7 +80,7 @@
    "provides" : {
       "Catalyst::Plugin::Babelfish" : {
          "file" : "lib/Catalyst/Plugin/Babelfish.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -95,6 +95,6 @@
          "web" : "https://github.com/regru/Catalyst-Plugin-Babelfish"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

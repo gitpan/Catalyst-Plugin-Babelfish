@@ -7,7 +7,7 @@ use Modern::Perl;
 
 use Locale::Babelfish;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 
 our $babelfish = undef;
@@ -45,7 +45,7 @@ sub prepare {
 
 sub set_lang {
     my ($c, $lang) = @_;
-    $babelfish->set_context_lang($lang);
+    $babelfish->set_locale($lang);
 }
 
 
@@ -53,7 +53,7 @@ sub set_lang {
 sub current_lang {
     my $c  = shift;
 
-    return $babelfish->context_lang;
+    return $babelfish->current_locale;
 }
 
 
@@ -71,7 +71,7 @@ Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

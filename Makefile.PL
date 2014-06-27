@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "Catalyst::Runtime" => 0,
-    "Locale::Babelfish" => 0,
+    "Locale::Babelfish" => "0.06",
     "Modern::Perl" => 0,
     "parent" => 0,
     "strict" => 0,
@@ -42,7 +42,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -58,7 +58,7 @@ my %FallbackPrereqs = (
   "FindBin" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Locale::Babelfish" => 0,
+  "Locale::Babelfish" => "0.06",
   "Modern::Perl" => 0,
   "Test::Deep" => 0,
   "Test::More" => "0.98",

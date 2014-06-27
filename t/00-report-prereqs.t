@@ -62,7 +62,7 @@ my $static_prereqs = do { my $x = {
                       'requires' => {
                                       'Carp' => '0',
                                       'Catalyst::Runtime' => '0',
-                                      'Locale::Babelfish' => '0',
+                                      'Locale::Babelfish' => '0.06',
                                       'Modern::Perl' => '0',
                                       'parent' => '0',
                                       'perl' => '5.008009',

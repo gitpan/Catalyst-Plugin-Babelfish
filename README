@@ -2,7 +2,7 @@ NAME
     Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
         use Catalyst 'Babelfish';
