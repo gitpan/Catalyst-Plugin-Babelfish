@@ -1,10 +1,11 @@
 {
    "abstract" : "Locale::Babelfish for Catalyst",
    "author" : [
+      "Akzhan Abdulin <akzhan@cpan.org>",
       "Igor Mironov <grif@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "mit"
    ],
@@ -48,10 +49,9 @@
          "requires" : {
             "Carp" : "0",
             "Catalyst::Runtime" : "0",
-            "Locale::Babelfish" : "0.06",
-            "Modern::Perl" : "0",
+            "Locale::Babelfish" : "1.000000",
             "parent" : "0",
-            "perl" : "5.008009",
+            "perl" : "5.010001",
             "strict" : "0",
             "utf8" : "0",
             "warnings" : "0"
@@ -80,7 +80,7 @@
    "provides" : {
       "Catalyst::Plugin::Babelfish" : {
          "file" : "lib/Catalyst/Plugin/Babelfish.pm",
-         "version" : "0.02"
+         "version" : "1.000000"
       }
    },
    "release_status" : "stable",
@@ -95,6 +95,6 @@
          "web" : "https://github.com/regru/Catalyst-Plugin-Babelfish"
       }
    },
-   "version" : "0.02"
+   "version" : "1.000000"
 }
 

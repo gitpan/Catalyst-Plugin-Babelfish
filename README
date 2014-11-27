@@ -2,12 +2,13 @@ NAME
     Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 VERSION
-    version 0.02
+    version 1.000000
 
 SYNOPSIS
         use Catalyst 'Babelfish';
 
-        $c->set_lang('ru_RU');
+        $c->l10n->locale('ru_RU');
+        print $c->l10n->locale;
         print $c->l10n->t('main.hello');
 
     Use a macro if you're lazy:
@@ -28,10 +29,9 @@ DESCRIPTION
 
         __PACKAGE__->config(
             babelfish => {
-                default_lang => 'en_US',
-                dirs         => [ "/path/to/dictionaries" ],
-                langs        => [ 'fr_FR', 'en_US' ],
-                lang_param   => 'language',
+                default_locale => 'en_US',
+                dirs           => [ "/path/to/dictionaries" ],
+                lang_param     => 'language',
             },
         );
 
@@ -55,23 +55,15 @@ METHODS
 
     and other methods
 
-  set_lang
-    Setting language
-
-        $c->set_lang( $lang );
-
-  current_lang
-    Current language
-
-        $c->current_lang;
-
 SEE ALSO
     Locale::Babelfish
 
     <https://github.com/nodeca/babelfish>
 
-AUTHOR
-    Igor Mironov <grif@cpan.org>
+AUTHORS
+    *   Akzhan Abdulin <akzhan@cpan.org>
+
+    *   Igor Mironov <grif@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is Copyright (c) 2014 by Igor Mironov.

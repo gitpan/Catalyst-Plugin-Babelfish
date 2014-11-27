@@ -3,11 +3,12 @@ package Catalyst::Plugin::Babelfish;
 # ABSTRACT: Locale::Babelfish for Catalyst
 
 use utf8;
-use Modern::Perl;
+use strict;
+use warnings;
 
 use Locale::Babelfish;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '1.000000'; # VERSION
 
 
 our $babelfish = undef;
@@ -27,7 +28,7 @@ sub setup_finalize {
     my $lcfg  = $cfg->{babelfish};
     $params->{lang_param} = $lcfg->{lang_param} || 'lang';
 
-    $babelfish = Locale::Babelfish->new($lcfg, $class->log);
+    $babelfish = Locale::Babelfish->new( $lcfg );
 
     $class->next::method(@_);
 }
@@ -36,24 +37,10 @@ sub setup_finalize {
 sub prepare {
     my $class = shift;
     my $c = $class->next::method(@_);
-    my $lang = $c->request->params->{$params->{lang_param}} ? $c->request->params->{$params->{lang_param}} : $babelfish->default_lang;
-    $c->set_lang($lang);
+    my $locale = $c->request->params->{$params->{lang_param}} || $babelfish->default_locale;
+    $babelfish->locale($locale);
 
     return $c;
-}
-
-
-sub set_lang {
-    my ($c, $lang) = @_;
-    $babelfish->set_locale($lang);
-}
-
-
-
-sub current_lang {
-    my $c  = shift;
-
-    return $babelfish->current_locale;
 }
 
 
@@ -71,13 +58,14 @@ Catalyst::Plugin::Babelfish - Locale::Babelfish for Catalyst
 
 =head1 VERSION
 
-version 0.02
+version 1.000000
 
 =head1 SYNOPSIS
 
     use Catalyst 'Babelfish';
 
-    $c->set_lang('ru_RU');
+    $c->l10n->locale('ru_RU');
+    print $c->l10n->locale;
     print $c->l10n->t('main.hello');
 
 Use a macro if you're lazy:
@@ -100,10 +88,9 @@ a C<babelfish> hashref to the config section:
 
     __PACKAGE__->config(
         babelfish => {
-            default_lang => 'en_US',
-            dirs         => [ "/path/to/dictionaries" ],
-            langs        => [ 'fr_FR', 'en_US' ],
-            lang_param   => 'language',
+            default_locale => 'en_US',
+            dirs           => [ "/path/to/dictionaries" ],
+            lang_param     => 'language',
         },
     );
 
@@ -130,18 +117,6 @@ Babelfish object
 
 and other methods
 
-=head2 set_lang
-
-Setting language
-
-    $c->set_lang( $lang );
-
-=head2 current_lang
-
-Current language
-
-    $c->current_lang;
-
 =for Pod::Coverage setup_finalize
 
 =for Pod::Coverage prepare
@@ -152,9 +127,19 @@ L<Locale::Babelfish>
 
 L<https://github.com/nodeca/babelfish>
 
-=head1 AUTHOR
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Akzhan Abdulin <akzhan@cpan.org>
+
+=item *
 
 Igor Mironov <grif@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use 5.008009;
+use 5.010001;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Locale::Babelfish for Catalyst",
-  "AUTHOR" => "Igor Mironov <grif\@cpan.org>",
+  "AUTHOR" => "Akzhan Abdulin <akzhan\@cpan.org>, Igor Mironov <grif\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -22,8 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "Catalyst::Runtime" => 0,
-    "Locale::Babelfish" => "0.06",
-    "Modern::Perl" => 0,
+    "Locale::Babelfish" => "1.000000",
     "parent" => 0,
     "strict" => 0,
     "utf8" => 0,
@@ -42,7 +41,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.02",
+  "VERSION" => "1.000000",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -58,8 +57,7 @@ my %FallbackPrereqs = (
   "FindBin" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Locale::Babelfish" => "0.06",
-  "Modern::Perl" => 0,
+  "Locale::Babelfish" => "1.000000",
   "Test::Deep" => 0,
   "Test::More" => "0.98",
   "parent" => 0,

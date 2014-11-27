@@ -13,7 +13,7 @@ sub hello : Global {
 
 sub hello_fr : Global {
     my( $self, $c, $key ) = @_;
-    $c->set_lang('fr_FR');
+    $c->l10n->locale('fr_FR');
     $c->res->body( $c->l10n->t( 'main.hello' ) );
 }
 
